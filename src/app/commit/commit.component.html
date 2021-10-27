@@ -1,0 +1,13 @@
+
+<mat-card *ngIf="commit as commit">
+  <mat-card-content>
+    <h6 class=""><a href="{{commit?.repo_url}}" class="">{{commit?.name}}</a></h6>
+    <h5 class=""><a href="{{commit?.html_url}}" class="">{{commit?.message | slice:0:10}}</a></h5>
+     <p class="">
+      {{commit?.message}}
+    </p>
+    <p class="">
+     <span class="me-2"><a href="{{commit?.commit_url}}" class="">{{commit?.author}}</a></span>committed on {{commit?.date}}
+    </p>
+  </mat-card-content>
+</mat-card>

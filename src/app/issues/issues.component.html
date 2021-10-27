@@ -1,0 +1,7 @@
+
+<mat-card>
+  <h6 class="text-wrap"><a href="{{issue?.issue_url}}" class="">{{issue?.tag}}</a></h6>
+  <h6 class=""><a href="{{issue?.url}}" class="">{{issue?.title}}</a></h6>
+  <p *ngIf="issue?.body" class="text-wrap">{{issue?.body}}</p>
+  <div class=""><span>opened on {{issue?.date}}</span></div>
+</mat-card>

@@ -1,0 +1,24 @@
+
+<section class="container mx-auto mt-5">
+  <div class="col-auto">
+  <h3 class=""><mat-icon>search</mat-icon>Search more than 238M repositories</h3>
+</div>
+  <div class="col-auto">
+    <div class="form-control col-auto">
+      <mat-form-field appearance="fill" class="w-100">
+      <input matInput #query placeholder="Search GitHub">
+      <button mat-icon-button matSuffix (click)="search(query.value)"><mat-icon>search</mat-icon></button>
+      </mat-form-field>
+      <div class="d-flex justify-content-end">
+        <mat-checkbox [(ngModel)]="commits">Commits</mat-checkbox>
+        <mat-checkbox [(ngModel)]="repos" class="mx-2">Repositories</mat-checkbox>
+        <mat-checkbox [(ngModel)]="issues" class="me-2">Issues</mat-checkbox>
+        <mat-checkbox [(ngModel)]="users">Users</mat-checkbox>
+      </div>
+    </div>
+
+</div>
+</section>
+
+
+

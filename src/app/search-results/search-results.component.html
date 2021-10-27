@@ -1,0 +1,42 @@
+
+<section class="container-fluid my-5 row row-cols-2" *ngIf="SearchResults && SearchResults.count > 0">
+  <div class="col-md-4">
+    <h5 class="mx-auto text-center">{{SearchResults.count}} Results Returned</h5>
+    <div class="list-group">
+      <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" (click)="change('repos')">Repositories<span class="badge bg-secondary ms-auto">{{SearchResults.repos?.count}}</span></a>
+      <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" (click)="change('commits')">Commits<span class="badge bg-secondary ms-auto">{{SearchResults.commits?.count}}</span></a>
+      <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" (click)="change('users')">Users<span class="badge bg-secondary ms-auto">{{SearchResults.users?.count}}</span></a>
+      <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" (click)="change('issues')">Issues<span class="badge bg-secondary ms-auto">{{SearchResults.issues?.count}}</span></a>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="" *ngIf="repos.stat && SearchResults.repos">
+      <h5 class="">{{SearchResults.repos.count}} Repositories Found</h5>
+      <div class="list-group">
+        <app-repo *ngFor="let repo of SearchResults.repos.results" class="list-group-item" [repo]="repo"></app-repo>
+      </div>
+    </div>
+    <div class="" *ngIf="commits.stat && SearchResults.commits">
+      <h5 class="">{{SearchResults.commits.count}} Commits Found</h5>
+      <div class="list-group">
+        <app-commit *ngFor="let commit of SearchResults.commits.results" class="list-group-item" [commit]="commit"></app-commit>
+      </div>
+    </div>
+    <div class="" *ngIf="users.stat && SearchResults.users">
+      <h5 class="">{{SearchResults.users.count}} Users Found</h5>
+      <div class="list-group">
+        <app-users *ngFor="let user of SearchResults.users.results" class="list-group-item" [user]="user"></app-users>
+      </div>
+    </div>
+    <div class="" *ngIf="issues.stat && SearchResults.issues">
+      <h5 class="">{{SearchResults.issues.count}} Issues Found</h5>
+      <div class="list-group">
+        <app-issues *ngFor="let issue of SearchResults.issues.results" class="list-group-item" [issue]="issue"></app-issues>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container mt-5" *ngIf="SearchResults.count<=0">
+  <app-home></app-home>
+</section>

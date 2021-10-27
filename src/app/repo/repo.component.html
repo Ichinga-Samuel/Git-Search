@@ -1,0 +1,17 @@
+
+
+<mat-card>
+  <mat-card-content>
+    <h6 class=""><a href="{{repo?.url}}" class="">{{repo?.name}}</a></h6>
+    <p class="">{{repo?.description}}</p>
+    <mat-chip-list>
+      <mat-chip *ngFor="let topic of repo?.topics">{{topic}}</mat-chip>
+    </mat-chip-list>
+    <div class="">
+      <span class="">{{repo?.stars}}</span>
+      <span class="mx-2">{{repo?.language}}</span>
+      <span class="me-2">{{repo?.license}}</span>
+      <span class="">Updated on {{repo?.date}}</span>
+    </div>
+  </mat-card-content>
+</mat-card>
